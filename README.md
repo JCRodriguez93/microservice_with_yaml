@@ -451,3 +451,149 @@ Centro:
       type: string
       description: El nombre del centro.
 ```
+
+
+
+## Controladores
+
+### EmpleadoController
+
+#### DELETE /empleados/{id}
+
+- **Descripción**: Elimina un empleado de la base de datos por su ID.
+- **Parámetros**:
+  - `id` (path, requerido): Identificador del empleado.
+- **Respuestas**:
+  - `204`: Empleado eliminado satisfactoriamente.
+  - `400`: Formato de ID de empleado no válido.
+  - `404`: Empleado no encontrado.
+  - `500`: Error interno del servidor.
+
+#### GET /empleados/{id}
+
+- **Descripción**: Consulta un empleado específico por su ID.
+- **Parámetros**:
+  - `id` (path, requerido): Identificador del empleado.
+- **Respuestas**:
+  - `200`: OK. Retorna el empleado solicitado.
+  - `400`: Formato de ID de empleado no válido.
+  - `404`: Empleado no encontrado.
+  - `500`: Error interno del servidor.
+
+#### GET /empleados
+
+- **Descripción**: Consulta la lista de empleados dados de alta en la base de datos.
+- **Respuestas**:
+  - `200`: OK. Retorna la lista de empleados.
+  - `204`: No hay empleados.
+  - `500`: Error interno del servidor.
+
+#### POST /empleados
+
+- **Descripción**: Crea un nuevo empleado en la base de datos.
+- **Cuerpo de la solicitud**: Objeto `Empleado`.
+- **Respuestas**:
+  - `201`: Empleado creado satisfactoriamente.
+  - `400`: Cuerpo de la solicitud nulo o nombre de empleado no válido.
+  - `500`: Error interno del servidor.
+
+#### PUT /empleados/{id}
+
+- **Descripción**: Modifica un empleado en la base de datos.
+- **Parámetros**:
+  - `id` (path, requerido): Identificador del empleado.
+- **Cuerpo de la solicitud**: Objeto `Empleado`.
+- **Respuestas**:
+  - `200`: Empleado modificado satisfactoriamente.
+  - `400`: Cuerpo de la solicitud nulo o ID de empleado no válido.
+  - `404`: Empleado no encontrado.
+  - `500`: Error interno del servidor.
+
+### CentroController
+
+#### DELETE /centros/{id}
+
+- **Descripción**: Elimina un centro de la base de datos por su ID.
+- **Parámetros**:
+  - `id` (path, requerido): Identificador del centro.
+- **Respuestas**:
+  - `204`: Centro eliminado satisfactoriamente.
+  - `404`: Centro no encontrado.
+  - `500`: Error interno del servidor.
+
+#### GET /centros/{id}
+
+- **Descripción**: Consulta un centro específico por su ID.
+- **Parámetros**:
+  - `id` (path, requerido): Identificador del centro.
+- **Respuestas**:
+  - `200`: OK. Retorna el centro solicitado.
+  - `404`: Centro no encontrado.
+  - `500`: Error interno del servidor.
+
+#### GET /centros
+
+- **Descripción**: Consulta la lista de centros dados de alta en la base de datos.
+- **Respuestas**:
+  - `200`: OK. Retorna la lista de centros.
+  - `204`: No hay centros.
+  - `500`: Error interno del servidor.
+
+#### POST /centros
+
+- **Descripción**: Crea un nuevo centro en la base de datos.
+- **Cuerpo de la solicitud**: Objeto `Centro`.
+- **Respuestas**:
+  - `201`: Centro creado satisfactoriamente.
+  - `400`: Cuerpo de la solicitud nulo, número de centro o nombre de centro no válidos.
+  - `500`: Error interno del servidor.
+
+#### PUT /centros/{id}
+
+- **Descripción**: Modifica un centro en la base de datos.
+- **Parámetros**:
+  - `id` (path, requerido): Identificador del centro.
+- **Cuerpo de la solicitud**: Objeto `Centro`.
+- **Respuestas**:
+  - `200`: Centro modificado satisfactoriamente.
+  - `400`: ID de centro no válido.
+  - `404`: Centro no encontrado.
+  - `500`: Error interno del servidor.
+
+# Documentación de Entidades y Repositorios
+
+## Entidades
+
+### EmpleadoEntity
+
+**Descripción**: La entidad `EmpleadoEntity` representa a un empleado en la base de datos.
+
+**Atributos**:
+- `idEmpleado` (Integer): El identificador único del empleado.
+- `nombre` (String): El nombre del empleado.
+- `idCentro` (Integer): El identificador del centro asociado al empleado.
+- `centro` (`CentroEntity`): La entidad `CentroEntity` asociada al empleado. Es una relación de muchos a uno con la entidad `CentroEntity`.
+
+### CentroEntity
+
+**Descripción**: La entidad `CentroEntity` representa a un centro en la base de datos.
+
+**Atributos**:
+- `numCentro` (Integer): El identificador único del centro.
+- `nombreCentro` (String): El nombre del centro.
+
+## Repositorios
+
+### EmpleadoRepository
+
+**Descripción**: El repositorio `EmpleadoRepository` proporciona métodos para realizar operaciones CRUD en la entidad `EmpleadoEntity`.
+
+**Métodos**:
+- `findByNombre(String nombre)`: Retorna una lista de `EmpleadoEntity` cuyos nombres contengan la cadena especificada.
+- `findByIdCentro(Integer idCentro)`: Retorna una lista de `EmpleadoEntity` que están asociados al identificador de centro especificado.
+
+### CentroRepository
+
+**Descripción**: El repositorio `CentroRepository` proporciona métodos para realizar operaciones CRUD en la entidad `CentroEntity`.
+
+**Métodos**: Hereda todos los métodos CRUD básicos de `JpaRepository` sin agregar métodos adicionales específicos.
