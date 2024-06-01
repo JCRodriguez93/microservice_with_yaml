@@ -790,6 +790,7 @@ public class CenterException extends RuntimeException {
         super(message);
     }
 }
+```
 
 ### Uso
 
@@ -798,4 +799,4 @@ Esta excepción se puede lanzar en diferentes partes del código cuando se produ
 ```java
 // Ejemplo de lanzamiento de la excepción cuando no se encuentra ningún centro con el ID especificado
 throw CenterException.NO_CENTER_FOUND_EXCEPTION;
-
+```
