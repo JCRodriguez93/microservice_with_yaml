@@ -806,6 +806,6 @@ Técnico superior **Desarrollo de Aplicaciones Multiplataforma** (DAM)
 
 Enlaces a mi **Linkedin** y **Wordpress**:
 ---
-Linkedin: <a href="https://www.linkedin.com/in/jorge-campos-rodriguez/"><img src="https://static-exp1.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" alt="LinkedIn" width="50"></a>
-Wordpress: <a href="https://fromdamtodev.wordpress.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Wordpress_Blue_logo.png" alt="WordPress" width="50"></a>
+Linkedin: <a href="https://www.linkedin.com/in/jorge-campos-rodriguez/"><img src="https://static-exp1.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" alt="LinkedIn" width="20"></a>
+Wordpress: <a href="https://fromdamtodev.wordpress.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Wordpress_Blue_logo.png" alt="WordPress" width="20"></a>
 
