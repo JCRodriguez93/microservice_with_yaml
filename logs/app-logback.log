@@ -1,0 +1,34 @@
+2024-06-01 20:28:07,077 INFO [main] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 20.0.2 with PID 2296 (C:\Users\jorge\Videos\app\target\classes started by jorge in C:\Users\jorge\Videos\app)
+2024-06-01 20:28:07,085 DEBUG [main] org.springframework.boot.StartupInfoLogger: Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-06-01 20:28:07,087 INFO [main] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2024-06-01 20:28:10,381 INFO [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-01 20:28:10,658 INFO [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 223 ms. Found 2 JPA repository interfaces.
+2024-06-01 20:28:13,096 INFO [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port 9090 (http)
+2024-06-01 20:28:13,141 INFO [main] org.apache.juli.logging.DirectJDKLog: Initializing ProtocolHandler ["http-nio-9090"]
+2024-06-01 20:28:13,146 INFO [main] org.apache.juli.logging.DirectJDKLog: Starting service [Tomcat]
+2024-06-01 20:28:13,147 INFO [main] org.apache.juli.logging.DirectJDKLog: Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-06-01 20:28:13,402 INFO [main] org.apache.juli.logging.DirectJDKLog: Initializing Spring embedded WebApplicationContext
+2024-06-01 20:28:13,413 INFO [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 6133 ms
+2024-06-01 20:28:13,582 INFO [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2024-06-01 20:28:14,386 INFO [main] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-06-01 20:28:14,396 INFO [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2024-06-01 20:28:14,578 INFO [main] org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration: H2 console available at '/h2'. Database available at 'jdbc:h2:mem:testdb'
+2024-06-01 20:28:16,287 INFO [main] org.hibernate.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-01 20:28:16,925 INFO [main] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-01 20:28:17,127 INFO [main] org.hibernate.cache.internal.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+2024-06-01 20:28:18,277 INFO [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-01 20:28:18,592 WARN [main] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-01 20:28:21,493 INFO [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-01 20:28:21,676 INFO [main] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-01 20:28:23,056 INFO [main] org.springframework.data.jpa.repository.query.QueryEnhancerFactory: Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-01 20:28:24,688 WARN [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-01 20:28:26,102 INFO [main] org.apache.juli.logging.DirectJDKLog: Starting ProtocolHandler ["http-nio-9090"]
+2024-06-01 20:28:26,166 INFO [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port 9090 (http) with context path ''
+2024-06-01 20:28:26,195 INFO [main] org.springframework.boot.StartupInfoLogger: Started AppApplication in 21.507 seconds (process running for 24.358)
+2024-06-01 20:28:45,100 INFO [http-nio-9090-exec-1] org.apache.juli.logging.DirectJDKLog: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-01 20:28:45,100 INFO [http-nio-9090-exec-1] org.springframework.web.servlet.FrameworkServlet: Initializing Servlet 'dispatcherServlet'
+2024-06-01 20:28:45,110 INFO [http-nio-9090-exec-1] org.springframework.web.servlet.FrameworkServlet: Completed initialization in 8 ms
+2024-06-01 20:28:46,062 INFO [http-nio-9090-exec-1] es.micro.app.controller.EmpleadoController: Employee with id 4 retrieved successfully
+2024-06-01 20:30:35,542 INFO [SpringApplicationShutdownHook] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-01 20:30:35,548 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2024-06-01 20:30:35,562 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
