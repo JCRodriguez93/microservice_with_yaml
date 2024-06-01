@@ -800,3 +800,12 @@ Esta excepción se puede lanzar en diferentes partes del código cuando se produ
 // Ejemplo de lanzamiento de la excepción cuando no se encuentra ningún centro con el ID especificado
 throw CenterException.NO_CENTER_FOUND_EXCEPTION;
 ```
+---
+Proyecto realizado por **Jorge Campos Rodríguez** 
+Técnico superior **Desarrollo de Aplicaciones Multiplataforma** (DAM)
+
+Enlaces a mi **Linkedin** y **Wordpress**:
+---
+Linkedin: <a href="https://www.linkedin.com/in/jorge-campos-rodriguez/"><img src="https://static-exp1.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" alt="LinkedIn" width="50"></a>
+Wordpress: <a href="https://fromdamtodev.wordpress.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Wordpress_Blue_logo.png" alt="WordPress" width="50"></a>
+
