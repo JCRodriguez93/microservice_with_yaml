@@ -597,3 +597,205 @@ Centro:
 **Descripción**: El repositorio `CentroRepository` proporciona métodos para realizar operaciones CRUD en la entidad `CentroEntity`.
 
 **Métodos**: Hereda todos los métodos CRUD básicos de `JpaRepository` sin agregar métodos adicionales específicos.
+
+## EmpleadosMapper
+
+Este mapper convierte objetos de tipo `EmpleadoEntity` a objetos de tipo `Empleado` y viceversa.
+
+### Métodos
+
+- `toApiDomain(EmpleadoEntity source)`: Convierte un objeto `EmpleadoEntity` a un objeto `Empleado`.
+    - **Parámetros:**
+        - `source`: El objeto `EmpleadoEntity` a convertir.
+    - **Retorno:** Un objeto `Empleado` con los datos mapeados.
+
+- `toApiDomain(List<EmpleadoEntity> source)`: Convierte una lista de objetos `EmpleadoEntity` a una lista de objetos `Empleado`.
+    - **Parámetros:**
+        - `source`: La lista de objetos `EmpleadoEntity` a convertir.
+    - **Retorno:** Una lista de objetos `Empleado` con los datos mapeados.
+
+- `toEntity(Empleado source)`: Convierte un objeto `Empleado` a un objeto `EmpleadoEntity`.
+    - **Parámetros:**
+        - `source`: El objeto `Empleado` a convertir.
+    - **Retorno:** Un objeto `EmpleadoEntity` con los datos mapeados.
+
+### Uso
+
+```java
+// Ejemplo de uso para convertir un EmpleadoEntity a un Empleado
+EmpleadoEntity empleadoEntity = ...;
+Empleado empleado = EmpleadosMapper.INSTANCE.toApiDomain(empleadoEntity);
+```
+## CentrosMapper
+
+Este mapper convierte objetos de tipo `CentroEntity` a objetos de tipo `Centro` y viceversa.
+
+### Métodos
+
+- `toApiDomain(CentroEntity source)`: Convierte un objeto `CentroEntity` a un objeto `Centro`.
+    - **Parámetros:**
+        - `source`: El objeto `CentroEntity` a convertir.
+    - **Retorno:** Un objeto `Centro` con los datos mapeados.
+
+- `toApiDomain(List<CentroEntity> source)`: Convierte una lista de objetos `CentroEntity` a una lista de objetos `Centro`.
+    - **Parámetros:**
+        - `source`: La lista de objetos `CentroEntity` a convertir.
+    - **Retorno:** Una lista de objetos `Centro` con los datos mapeados.
+
+- `toEntity(Centro source)`: Convierte un objeto `Centro` a un objeto `CentroEntity`.
+    - **Parámetros:**
+        - `source`: El objeto `Centro` a convertir.
+    - **Retorno:** Un objeto `CentroEntity` con los datos mapeados.
+
+### Uso
+
+```java
+// Ejemplo de uso para convertir un CentroEntity a un Centro
+CentroEntity centroEntity = ...;
+Centro centro = CentrosMapper.INSTANCE.toApiDomain(centroEntity);
+```
+
+## EmpleadoService
+
+Este servicio proporciona métodos para interactuar con los empleados.
+
+### Métodos
+
+- `getEmpleados()`: Obtiene todos los empleados.
+    - **Retorno:** Una lista de objetos `Empleado` con todos los empleados.
+
+- `putEmpleadoId(int id, Empleado empleado)`: Actualiza un empleado existente.
+    - **Parámetros:**
+        - `id`: El identificador del empleado a actualizar.
+        - `empleado`: El objeto `Empleado` con los datos actualizados.
+    - **Retorno:** HttpStatus indicando el estado de la operación.
+
+- `deleteEmpleadoId(int id)`: Elimina un empleado existente.
+    - **Parámetros:**
+        - `id`: El identificador del empleado a eliminar.
+    - **Retorno:** HttpStatus indicando el estado de la operación.
+
+- `postEmpleado(Empleado empleado)`: Crea un nuevo empleado.
+    - **Parámetros:**
+        - `empleado`: El objeto `Empleado` con los datos del nuevo empleado.
+    - **Retorno:** HttpStatus indicando el estado de la operación.
+
+- `getEmpleadoById(String id)`: Obtiene un empleado por su identificador.
+    - **Parámetros:**
+        - `id`: El identificador del empleado a buscar.
+    - **Retorno:** El objeto `Empleado` encontrado o `null` si no existe.
+
+### Uso
+
+```java
+// Ejemplo de uso para obtener todos los empleados
+List<Empleado> empleados = empleadoService.getEmpleados();
+```
+
+## CentroService
+
+Este servicio proporciona métodos para interactuar con los centros.
+
+### Métodos
+
+- `getCenterByIdCenter(Integer id)`: Obtiene un centro por su identificador.
+    - **Parámetros:**
+        - `id`: El identificador del centro a buscar.
+    - **Retorno:** El objeto `CentroEntity` encontrado o `null` si no existe.
+
+- `getAllCenters()`: Obtiene todos los centros.
+    - **Retorno:** Una lista de objetos `CentroEntity` con todos los centros.
+
+- `deleteCentroId(String id)`: Elimina un centro existente por su identificador.
+    - **Parámetros:**
+        - `id`: El identificador del centro a eliminar.
+
+- `saveCentro(CentroEntity centroEntity)`: Guarda un nuevo centro o actualiza uno existente.
+    - **Parámetros:**
+        - `centroEntity`: El objeto `CentroEntity` a guardar o actualizar.
+
+- `updateCentro(CentroEntity centroEntity)`: Actualiza un centro existente.
+    - **Parámetros:**
+        - `centroEntity`: El objeto `CentroEntity` con los datos actualizados.
+
+### Uso
+
+```java
+// Ejemplo de uso para obtener un centro por su identificador
+CentroEntity centro = centroService.getCenterByIdCenter(1);
+```
+
+## EmpleadoException
+
+Esta clase define una excepción personalizada llamada `EmpleadoException`, que extiende de `RuntimeException`.
+
+### Funcionalidad
+
+La clase `EmpleadoException` proporciona diferentes instancias predefinidas de excepciones para manejar situaciones específicas relacionadas con operaciones de empleados. Estas instancias incluyen mensajes de error específicos para cada tipo de excepción.
+
+### Código
+
+```java
+package es.micro.app.error;
+
+public class EmpleadoException extends RuntimeException {
+
+    // Instancias predefinidas de excepciones con mensajes específicos
+    public static final EmpleadoException NO_EMPLOYEE_FOUND_EXCEPTION = new EmpleadoException("No employee found with the specified ID");
+    public static final EmpleadoException INVALID_ID_EXCEPTION = new EmpleadoException("Invalid employee ID");
+    public static final EmpleadoException NULL_BODY_EXCEPTION = new EmpleadoException("Null body provided");
+    public static final EmpleadoException NULL_EMPLOYEE_NAME_EXCEPTION = new EmpleadoException("Employee name is required for updating");
+    public static final EmpleadoException MISSING_ID_EXCEPTION = new EmpleadoException("Employee ID is required for updating");
+
+    // Constructor que toma un mensaje de error
+    public EmpleadoException(String message) {
+        super(message);
+    }
+}
+```
+### Uso
+
+Esta excepción se puede lanzar en diferentes partes del código cuando se producen situaciones específicas, como la falta de un empleado con un ID específico, un ID de empleado inválido, un cuerpo nulo proporcionado, etc. Por ejemplo:
+
+```java
+// Ejemplo de lanzamiento de la excepción cuando no se encuentra ningún empleado con el ID especificado
+throw EmpleadoException.NO_EMPLOYEE_FOUND_EXCEPTION;
+```
+
+## CenterException
+
+Esta clase define una excepción personalizada llamada `CenterException`, que extiende de `RuntimeException`.
+
+### Funcionalidad
+
+La clase `CenterException` proporciona diferentes instancias predefinidas de excepciones para manejar situaciones específicas relacionadas con operaciones de centros. Estas instancias incluyen mensajes de error específicos para cada tipo de excepción.
+
+### Código
+
+```java
+package es.micro.app.error;
+
+public class CenterException extends RuntimeException {
+
+    // Instancias predefinidas de excepciones con mensajes específicos
+    public static final CenterException NO_CENTER_FOUND_EXCEPTION = new CenterException("No center found with the specified ID");
+    public static final CenterException INVALID_ID_EXCEPTION = new CenterException("Invalid ID");
+    public static final CenterException NULL_BODY_EXCEPTION = new CenterException("Null body provided");
+    public static final CenterException INVALID_CENTER_NUMBER_EXCEPTION = new CenterException("Invalid center number");
+    public static final CenterException INVALID_CENTER_NAME_EXCEPTION = new CenterException("Invalid center name");
+    public static final CenterException NO_CENTERS_FOUND_EXCEPTION = new CenterException("No centers found");
+
+    // Constructor que toma un mensaje de error
+    public CenterException(String message) {
+        super(message);
+    }
+}
+
+### Uso
+
+Esta excepción se puede lanzar en diferentes partes del código cuando se producen situaciones específicas, como la falta de un centro con un ID específico, un ID de centro inválido, un cuerpo nulo proporcionado, etc. Por ejemplo:
+
+```java
+// Ejemplo de lanzamiento de la excepción cuando no se encuentra ningún centro con el ID especificado
+throw CenterException.NO_CENTER_FOUND_EXCEPTION;
+
