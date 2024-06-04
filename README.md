@@ -804,8 +804,12 @@ throw CenterException.NO_CENTER_FOUND_EXCEPTION;
 Proyecto realizado por **Jorge Campos Rodríguez** 
 Técnico superior **Desarrollo de Aplicaciones Multiplataforma** (DAM)
 
-Enlaces a mi **Linkedin** y **Wordpress**:
+
+Contacto
 ---
-Linkedin: <a href="https://www.linkedin.com/in/jorge-campos-rodriguez/"><img src="https://static-exp1.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" alt="LinkedIn" width="20"></a>
-Wordpress: <a href="https://fromdamtodev.wordpress.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Wordpress_Blue_logo.png" alt="WordPress" width="20"></a>
+<a href="https://www.linkedin.com/in/jorge-campos-rodriguez/"><img src="https://static-exp1.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" alt="LinkedIn" width="15"></a> Linkedin: https://www.linkedin.com/in/jorge-campos-rodriguez/
+
+<a href="https://fromdamtodev.wordpress.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Wordpress_Blue_logo.png" alt="WordPress" width="15"></a> Wordpress: https://fromdamtodev.wordpress.com
+
+<img src="https://cdn-icons-png.flaticon.com/512/6069/6069541.png" alt="correo" width="15"></a> Correo: [jorge_madro@hotmail.com](mailto:jorge_madro@hotmail.com)
 

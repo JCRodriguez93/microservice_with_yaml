@@ -1,4 +1,3 @@
--- Insertar datos en la tabla CENTROS
 INSERT INTO CENTROS (NUM_CENTRO, NOMBRE_CENTRO)
 VALUES
 (101, 'ViewNext'),
@@ -12,7 +11,6 @@ VALUES
 (109, 'Cognizant'),
 (110, 'IBM');
 
--- Insertar datos en la tabla EMPLEADOS
 INSERT INTO EMPLEADOS (ID_EMPLEADO, NOMBRE, ID_CENTRO)
 VALUES
 (1, 'Juan', 101),
